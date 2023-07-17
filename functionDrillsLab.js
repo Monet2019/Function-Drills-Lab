@@ -316,15 +316,18 @@ let loser = 'Glimmer'
 
 //CODE HERE
 
-function theEliminator(contestants, loser) {
-  let index = contestants.indexOf(loser);
-  if (index !== -1) {
-    contestants.splice(index, 1);
+function theEliminator(contestant,loser){
+  for (var i = 0; i < contestants.length; i++) { 
+    if ( contestant[i] === loser){
+      contestants.splice(i, 1)
+    }
+    
   }
   return contestants;
 }
-let newContestants = theEliminator(contestants, loser);
-console.log(newContestants);
+
+console.log(theEliminator(contestants,loser))
+
 
 
 ////////////////// PROBLEM 17 ////////////////////
@@ -355,17 +358,16 @@ logUpperCase(sampleString);
 */
 
 function emailCheck(email) {
-  let trimmEmail = String(email).trim();
+  email = String(email).trim();
 
-  if (trimmEmail.includes('@')) {
+  if (email.includes('@')) {
     return 'email verified';
   } else {
     return 'must provide a valid email address';
   }
 }
 
-// Test the function
-console.log(emailCheck('john.doe@example.com')); 
+console.log(emailCheck('jane.doe@example.com')); 
 console.log(emailCheck('invalid_email.com')); 
 
 
@@ -384,7 +386,7 @@ function buyChocolateFrogs(goldAmount) {
 }
 
 let totalFrogs = buyChocolateFrogs(10); 
-console.log(totalFrogs);
+console.log("Total Frogs:", totalFrogs);
 
 
 ////////////////// PROBLEM 20 ////////////////////
@@ -401,7 +403,7 @@ function buyChocolateFrogs2(goldAmount) {
 }
 
 let totalFrogs2 = buyChocolateFrogs2(5); 
-console.log(totalFrogs2); 
+console.log("Total Frogs 2:", totalFrogs2); 
 
 
 
