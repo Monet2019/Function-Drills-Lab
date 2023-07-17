@@ -247,6 +247,17 @@ printAllNames(namesArr);
 
 //CODE HERE
 
+function thatsOdd(number) {
+  if (number % 2 === 0) {
+    return "That's not odd!";
+  } else {
+    return "That is odd indeed!";
+  }
+}
+
+let oddChecker = thatsOdd(4);
+console.log(oddChecker); 
+
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -259,6 +270,9 @@ printAllNames(namesArr);
 */
 
 //CODE HERE
+
+const bestMovie = movieTitle => `${movieTitle} is the best movie ever!`;
+console.log(bestMovie('Harlem Nights'));
 
 
 ////////////////// PROBLEM 15 ////////////////////
@@ -274,6 +288,23 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 
 //CODE HERE
 
+function bigOrSmall(arr) {
+  const answers = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answers.push('big');
+    } else {
+      answers.push('small');
+    }
+  }
+
+  return answers;
+}
+
+let arrayEvaluator = bigOrSmall(bigOrSmallArray);
+console.log(arrayEvaluator); 
+
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -285,6 +316,16 @@ let loser = 'Glimmer'
 
 //CODE HERE
 
+function theEliminator(contestants, loser) {
+  let index = contestants.indexOf(loser);
+  if (index !== -1) {
+    contestants.splice(index, 1);
+  }
+  return contestants;
+}
+let newContestants = theEliminator(contestants, loser);
+console.log(newContestants);
+
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -294,6 +335,12 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+
+function logUpperCase(str) {
+  console.log(str.toUpperCase());
+}
+logUpperCase(sampleString);
+
 
 
 ////////////////// PROBLEM 18 ////////////////////
@@ -306,6 +353,21 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+
+function emailCheck(email) {
+  const trimmedEmail = String(email).trim();
+
+  if (trimmedEmail.includes('@')) {
+    return 'email verified';
+  } else {
+    return 'must provide a valid email address';
+  }
+}
+
+// Test the function
+console.log(emailCheck('john.doe@example.com')); 
+console.log(emailCheck('invalid_email.com')); 
+
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
