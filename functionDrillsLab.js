@@ -355,9 +355,9 @@ logUpperCase(sampleString);
 */
 
 function emailCheck(email) {
-  const trimmedEmail = String(email).trim();
+  let trimmEmail = String(email).trim();
 
-  if (trimmedEmail.includes('@')) {
+  if (trimmEmail.includes('@')) {
     return 'email verified';
   } else {
     return 'must provide a valid email address';
@@ -377,6 +377,15 @@ console.log(emailCheck('invalid_email.com'));
 
 //CODE HERE
 
+function buyChocolateFrogs(goldAmount) {
+  let costPerFrog = 3;
+  let totalFrogs = Math.floor(goldAmount / costPerFrog);
+  return totalFrogs;
+}
+
+let totalFrogs = buyChocolateFrogs(10); 
+console.log(totalFrogs);
+
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -384,6 +393,16 @@ console.log(emailCheck('invalid_email.com'));
 */
 
 //CODE HERE
+
+function buyChocolateFrogs2(goldAmount) {
+  const costPerFrog = 3;
+  const totalFrogs = Math.floor(goldAmount / costPerFrog);
+  return totalFrogs;
+}
+
+let totalFrogs2 = buyChocolateFrogs2(5); 
+console.log(totalFrogs2); 
+
 
 
 ////////////////// PROBLEM 21 ////////////////////
@@ -393,6 +412,18 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+
+function isAscending(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+let arrayIsAscending = isAscending(sampleArray);
+console.log(arrayIsAscending)
 
 
 ////////////////// PROBLEM 22 ////////////////////
@@ -417,13 +448,18 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ["saliorDuck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ["realDuck"]
+
+console.log(globalScope)
+console.log(bathroomScope)
+console.log(bathtubScope)
+console.log(pondScope)
